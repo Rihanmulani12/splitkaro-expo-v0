@@ -32,7 +32,7 @@ export default function RootLayout() {
 
   return (
    
-    <ThemeProvider value={colorScheme === 'dark' ? DefaultTheme : DarkTheme}>
+    <ThemeProvider value={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
