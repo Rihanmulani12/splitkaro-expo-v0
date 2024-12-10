@@ -8,10 +8,10 @@ import React from 'react';
 const AuthLayout = () => {
   return (
         
-    <Stack>
-      <Stack.Screen name="(auth)/index" options={{ headerShown: false }} />
-      <Stack.Screen name="(auth)/onboarding" options={{ headerShown: false }} />
-    </Stack>
+    <Stack screenOptions={{ headerShown: false }}>
+  <Stack.Screen name="(auth)/index" />
+  <Stack.Screen name="(tabs)/home" />
+</Stack>
         
       
   );

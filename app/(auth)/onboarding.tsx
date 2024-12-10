@@ -6,9 +6,9 @@ import { View , Text } from 'react-native'
 
 const onboarding = () => {
   return (
-    <View>
-    <Text>login</Text>
-  </View>
+    <>
+    <OnboardingScreen/>
+    </> 
   )
 }
 
