@@ -11,7 +11,7 @@ const login = () => {
       
      <SafeAreaView style={{flex : 1}}>
         
-        <OnboardingScreen/>
+     <OnboardingScreen navigation={"onboarding"}/>
     </SafeAreaView>
       
      

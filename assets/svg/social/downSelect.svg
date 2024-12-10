@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: CC Attribution. Made by Saeedworks: https://dribbble.com/saeedworks -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="style=linear">
+    <g id="like">
+      <path id="vector" d="M16.33997 13.8978L12.24 19.99779C11.84 20.59779 10.84 20.99779 10.04 20.69779C9.14003 20.39779 8.54003 19.39779 8.74003 18.49779L9.24003 15.29779C9.34003 14.59779 8.84003 14.09779 8.24003 14.09779H4.24003C2.74003 14.09779 1.81992 12.9478 2.34003 11.4978C2.86015 10.0478 3.31999 7.44779 4.74003 5.19779C5.38981 4.16815 6.10254 3.44779 7.31997 3.44779C11.31997 3.44779 17.34 3.44779 17.34 3.44779" stroke="#cccccc" stroke-width="1.5" fill="#cccccc" stroke-miterlimit="10"/>
+      <path id="rec" d="M21.81995 13.4478C21.81995 14.0001 21.3722 14.4478 20.8199 14.4478H17.3199C16.7676 14.4478 16.3199 14.0001 16.3199 13.4478V3.4478H20.8199C21.3722 3.4478 21.8199 3.89551 21.8199 4.4478V13.4478Z" stroke="#cccccc" fill="#cccccc" stroke-width="1.5"/>
+      <path d="M16.22 3.44779L16.22 14.0978" stroke="#ffffff" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
