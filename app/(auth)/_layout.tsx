@@ -1,20 +1,20 @@
-import { Stack  } from 'expo-router'
-import { StatusBar } from 'expo-status-bar'
-import React from 'react'
+import { Stack } from 'expo-router';
+import React from 'react';
+
+
+
+
 
 const AuthLayout = () => {
-    return (
-    
-      <Stack  screenOptions={{ headerShown: false}}>
-        <Stack.Screen name='login'   />
-        <Stack.Screen name='loginOtp'  />
+  return (
         
-  
-        <StatusBar backgroundColor='#161622' style="light" />
-        </Stack>
-     
+    <Stack>
+      <Stack.Screen name="(auth)/index" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)/onboarding" options={{ headerShown: false }} />
+    </Stack>
+        
       
-    )
-  }
+  );
+};
 
 export default AuthLayout;

@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "lib/ActivityComponentTypes.js"  ]
+, "lib/ActivityComponentTypes.js", "constants/Theme/theme.ts"  ]
 }

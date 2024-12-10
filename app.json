@@ -30,12 +30,12 @@
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "cover"
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "splash": {
       "image": "./assets/images/splash-icon.png",
-
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#5563da"
     },
     "experiments": {
