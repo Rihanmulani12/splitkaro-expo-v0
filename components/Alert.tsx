@@ -65,7 +65,7 @@ const Alert = (props, ref : any) => {
          <View style={{ height: 115, width: 115,marginLeft:3 }}>
                           <LottieView
 
-                            source={require('../lottie/offer.json')}
+                            source={require("../lottie/offer.json")}
                             autoPlay
                             loop
                           />
