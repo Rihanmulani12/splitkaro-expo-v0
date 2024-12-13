@@ -4,15 +4,15 @@ import moment from 'moment';
 
 import {getSubscriptionForUserApi} from '../helperFunctions/Api';
 
-import {useAtom} from 'jotai';
-import {RESET, atomWithStorage, createJSONStorage} from 'jotai/utils';
+// import {useAtom} from 'jotai';
+// import {RESET, atomWithStorage, createJSONStorage} from 'jotai/utils';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-const storage = createJSONStorage(() => AsyncStorage);
+ import AsyncStorage from '@react-native-async-storage/async-storage';
+ const storage = createJSONStorage(() => AsyncStorage);
 
-import Log from '../helperFunctions/Log';
-import {analytics} from '../configs/analytics';
-import mixpanel from '../configs/mixpanel';
+//import Log from '../helperFunctions/Log';
+// import {analytics} from '../configs/analytics';
+// import mixpanel from '../configs/mixpanel';
 
 export const storedSubscriptionAtom = atomWithStorage(
   '@isUserSubscribed',
