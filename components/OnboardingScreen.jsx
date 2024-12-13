@@ -165,7 +165,7 @@ const OnboardingScreen = () => {
           paddingHorizontal="l"
           justifyContent="space-between"
         >  
-         <Link href="/login" asChild>
+         <Link href="/(auth)/login" asChild>
        <Button label="Get Started" 
          width={'48%'}
          title="Get started"
@@ -176,7 +176,7 @@ const OnboardingScreen = () => {
       </Link>
        
        
-      <Link href="/login" asChild>
+      <Link href="/(auth)/login" asChild>
        <Button label="Login" 
          width={'48%'}
          title="Login"

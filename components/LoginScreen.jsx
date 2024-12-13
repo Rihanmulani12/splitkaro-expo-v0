@@ -1,15 +1,21 @@
 import React, { useRef, useState } from "react";
 import { StyleSheet, View, Text, Pressable, Alert } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
+import { useRouter } from "expo-router";
 
 const Login = () => {
+
+ 
   const phoneInput = useRef(null);
   const [phoneNumber, setPhoneNumber] = useState(""); 
+  const router = useRouter();
 
   
   const handleRequestOtp = () => {
     if (phoneNumber) {
       Alert.alert("OTP Requested", `OTP sent to ${phoneNumber}`);
+
+      router.push("/(tabs)/home");
       
     } else {
       Alert.alert("Error", "Please enter a valid phone number.");
@@ -49,10 +55,11 @@ const Login = () => {
       </View>
 
       
-      <Pressable style={styles.requestOtpButton} onPress={handleRequestOtp}>
+      <Pressable style={styles.requestOtpButton} onPress={handleRequestOtp} >
        
         <View style={styles.requestOtpButtonTextContainer }>
           <Text style={styles.requestOtpText}>Request OTP</Text>
+          
         </View>
       </Pressable>
     </View>
