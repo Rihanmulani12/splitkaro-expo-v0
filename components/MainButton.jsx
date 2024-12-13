@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Pressable,Dimensions } from 'react-native'
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export const MainButton = (props : any) => {
+export const MainButton = (props ) => {
     let backgroundColor = props.inactive ? "#999999" : "black"
 
     return (

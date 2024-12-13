@@ -1,4 +1,5 @@
 import { Tabs } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { Svg, Path } from "react-native-svg";
 
 const HomeIcon = ({ color, size = 24 }) => (
@@ -93,7 +94,9 @@ const FriendsIcon = ({ color, size = 24 }) => (
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <>
+    <StatusBar style="auto" />
+    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" , headerShown: false }}>
       <Tabs.Screen
         name="home"
         options={{
@@ -122,6 +125,10 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <FriendsIcon color={color} size={size} />,
         }}
       />
+    
+
+      
     </Tabs>
+    </>
   );
 }
