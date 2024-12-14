@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "954438919722",
+    "project_id": "splitkaro-expo-v0",
+    "storage_bucket": "splitkaro-expo-v0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954438919722:android:7a0d3a00357b91c0eec553",
+        "android_client_info": {
+          "package_name": "com.splitkaro_expo.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByrg8CJO-dFKehka4GfntNUmfa8OlJA6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

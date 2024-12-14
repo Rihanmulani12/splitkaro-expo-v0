@@ -51,7 +51,7 @@ const Home = () => {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           {/* Account Button */}
-          
+
           <View style={styles.headerButtonContainer}>
             <Pressable
               android_ripple={{ color: "#FFF6EE", radius: 20 }}
@@ -69,7 +69,18 @@ const Home = () => {
             <ActivityButton />
           </View>
         </View>
-        <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12, marginLeft: 10 , top : 85 , position: "absolute"}}>Account</Text>
+        <Text
+          style={{
+            fontFamily: "Metropolis-Bold",
+            color: "#E5E5E5",
+            fontSize: 12,
+            marginLeft: 10,
+            top: 85,
+            position: "absolute",
+          }}
+        >
+          Account
+        </Text>
 
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
@@ -78,27 +89,35 @@ const Home = () => {
           <View style={styles.groupSection}>
             <Pressable onPress={handleCreateGroup} style={styles.createButton}>
               <View style={styles.createGroupBtn}>
-              <Svg
-                
-                
-                viewBox="0 0 490 490"
-                style={{backgroundColor: "transparent"}}
-                
-              >
-                <Polygon
-                  style="fill:#ffffff;"
-                  points="495,227.5 267.5,227.5 267.5,0 227.5,0 227.5,227.5 0,227.5 0,267.5 227.5,267.5 227.5,495 
+                <Svg
+                  viewBox="0 0 490 490"
+                  style={{ backgroundColor: "transparent" }}
+                >
+                  <Polygon
+                    style="fill:#ffffff;"
+                    points="495,227.5 267.5,227.5 267.5,0 227.5,0 227.5,227.5 0,227.5 0,267.5 227.5,267.5 227.5,495 
 	267.5,495 267.5,267.5 495,267.5 "
-                />
-              </Svg>
-
-              
+                  />
+                </Svg>
               </View>
-              <View style={{justifyContent: "center", alignItems: "center",width:80,top:5}}>
-              <Text ellipsizeMode={"tail"} numberOfLines={1} style={{ fontSize: 12, fontFamily: "Metropolis-SemiBold"}}>Create new</Text>
+              <View
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 80,
+                  top: 5,
+                }}
+              >
+                <Text
+                  ellipsizeMode={"tail"}
+                  numberOfLines={1}
+                  style={{ fontSize: 12, fontFamily: "Metropolis-SemiBold" }}
+                >
+                  Create new
+                </Text>
               </View>
             </Pressable>
-            
+
             <CreateGroupModal
               isVisible={isModalVisible}
               onClose={handleCloseModal}
@@ -202,30 +221,23 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   groupSection: {
-   
-    marginTop : 150,
+    marginTop: 150,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
-    
-    marginBottom: 20,
-    
 
+    marginBottom: 20,
   },
   createButton: {
     alignItems: "center",
     justifyContent: "center",
-    
   },
   createGroupBtn: {
-    height : 40 ,
+    height: 40,
     width: 40,
     borderRadius: 30,
     backgroundColor: "white",
-
-   
   },
-  
 });
 
 export default Home;

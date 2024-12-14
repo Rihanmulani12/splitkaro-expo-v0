@@ -50,7 +50,7 @@ const ActivityButton: React.FC<ActivityButtonProps> = ({
     </Pressable>
     
 
-    <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12 , bottom : -10, right : 10 }}>Acitivity</Text>
+    <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12 , bottom : -5, right : 10 }}>Acitivity</Text>
     <View/>
     </>
   );
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     
     height: 40,
     width: 40,
-    top : 10
+    top : 30
     
     
     
