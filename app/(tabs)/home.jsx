@@ -51,6 +51,7 @@ const Home = () => {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           {/* Account Button */}
+          
           <View style={styles.headerButtonContainer}>
             <Pressable
               android_ripple={{ color: "#FFF6EE", radius: 20 }}
@@ -68,6 +69,7 @@ const Home = () => {
             <ActivityButton />
           </View>
         </View>
+        <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12, marginLeft: 10 , top : 90 , position: "absolute"}}>Account</Text>
 
         <ScrollView
           contentContainerStyle={styles.scrollContainer}

@@ -1,3 +1,4 @@
+import SafeScreen from "@/components/SafeScreen";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Svg, Path } from "react-native-svg";
@@ -95,6 +96,7 @@ const FriendsIcon = ({ color, size = 24 }) => (
 export default function TabLayout() {
   return (
     <>
+    <SafeScreen color="#707CE3">
     <StatusBar style="auto" />
     <Tabs screenOptions={{ tabBarActiveTintColor: "blue" , headerShown: false }}>
       <Tabs.Screen
@@ -129,6 +131,7 @@ export default function TabLayout() {
 
       
     </Tabs>
+    </SafeScreen>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  View,
   Pressable,
   PressableProps,
   ViewStyle,
@@ -22,15 +23,17 @@ interface ActivityButtonProps extends PressableProps {
 }
 
 const ActivityButton: React.FC<ActivityButtonProps> = ({
-  width = 20,
-  height = 20,
+  width = 30,
+  height = 30,
   fillColor = "white",
   containerStyle,
   badgeCount,
   ...pressableProps
 }) => {
   return (
-    <Pressable style={[styles.container, containerStyle]} {...pressableProps}>
+    <>
+    <View style={[styles.container]}/>
+    <Pressable  >
       <Svg width={width} height={height} viewBox="0 0 12 14" fill="none">
         <Path
           d="M5.72497 13.4431C6.7497 13.4431 7.58338 12.6267 7.63548 11.6194H3.81445C3.86656 12.6267 4.70024 13.4431 5.72497 13.4431Z"
@@ -41,18 +44,31 @@ const ActivityButton: React.FC<ActivityButtonProps> = ({
           fill={fillColor}
         />
       </Svg>
+      
 
       
     </Pressable>
+    
+
+    <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12 , bottom : -10, right : 10 }}>Acitivity</Text>
+    <View/>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    position: "relative",
+    
+    height: 40,
+    width: 40,
+    top : 10
     
     
-  },
+    
+  
+    
+    
+  }
   
 });
 
