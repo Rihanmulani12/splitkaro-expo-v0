@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   Text,
@@ -7,81 +8,156 @@ import {
   StyleSheet,
   StatusBar,
 } from "react-native";
-import CreateGroup from "../../components/createGroup";
-import React, { useRef } from "react";
+import { useState } from "react";
+
+import SafeScreen from "@/components/SafeScreen";
+import Wallet from "@/assets/svg/general/walletwhite.svg";
+import ActivityButton from "@/components/activity";
+import CreateGroupModal from "@/components/createGroup"
 
 const Home = () => {
-  const createGroupRef = useRef(console.log("ref"));
+
+  
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  // Function to open the modal
+  const handleCreateGroup = () => {
+    setModalVisible(true);
+  };
+
+  // Function to close the modal
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
+
+  // Function to handle group creation
+  const handleGroupCreation = (groupData) => {
+    console.log('New Group Created:', groupData);
+    handleCloseModal();
+  };
+
+  const handleAccountPress = () => {
+    console.log("Account button pressed");
+  };
+
+  const handleWalletPress = () => {
+    console.log("Wallet button pressed");
+  };
+  
 
   return (
-    <>
-    
-    <View style={styles.container}>
-     
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.topSection}>
-        <View style={styles.iconSection}>
-          <View style={styles.iconContainer}>
-            <Pressable style={styles.iconButton}>
-              <Text style={styles.iconText}>A</Text>
-            </Pressable>
-            <Text style={styles.labelText}>Account</Text>
-          </View>
-
-          <View style={styles.iconContainer}>
-            <Pressable style={styles.iconButton}>
-              <Text style={styles.iconText}>W</Text>
-            </Pressable>
-            <Text style={styles.labelText}>Wallet</Text>
-          </View>
-        </View>
-      </View>
-
-      
-
-      
-
-
+    <SafeScreen color="#707CE3">
+      <StatusBar barStyle="light-content" backgroundColor="#707CE3" />
       <View style={styles.container}>
-        <View style={styles.groupSection}>
-          <Pressable
-            onPress={() => createGroupRef.current?.showAlert()}
-            style={styles.createButton}
-          >
-            <Text style={styles.createButtonText}>Create Group</Text>
-          </Pressable>
+        <View style={styles.headerContainer}>
+          {/* Account Button */}
+          <View style={styles.headerButtonContainer}>
+            <Pressable
+              android_ripple={{ color: "#FFF6EE", radius: 20 }}
+              style={styles.headerButton}
+              onPress={handleAccountPress}
+            >
+              <View style={styles.headerButtonInner}>
+                <Text style={styles.headerButtonIcon}>A</Text>
+              </View>
+            </Pressable>
+            <Text style={styles.headerButtonText}>Account</Text>
+          </View>
 
+          {/* Wallet and Activity Buttons */}
+          <View style={styles.rightHeaderButtons}>
+            <View style={styles.headerButtonContainer}>
+              <Pressable
+                android_ripple={{ color: "#FFF6EE", radius: 20 }}
+                style={styles.headerButton}
+                onPress={handleWalletPress}
+              >
+                <View style={styles.headerButtonInner}>
+                 <Text>Wallet</Text>
+                </View>
+              </Pressable>
+              <Text style={styles.headerButtonText}>Wallet</Text>
+            </View>
+
+            <ActivityButton />
+          </View>
+        </View>
+
+        <ScrollView
+          contentContainerStyle={styles.scrollContainer}
+          showsVerticalScrollIndicator={false}
+        >
           
-          <CreateGroup ref={createGroupRef} />
-        </View>
-      </View>
 
-      
-        <View style={styles.bannerSection}>
-          <Image
-            source={require("../../assets/OnlineVendorsEntryCard.png")}
-            resizeMode="contain"
-            style={styles.bannerImage}
-          />
-        </View>
-      </ScrollView>
-    </View>
-    </>
+          <View style={styles.groupSection}>
+            <Pressable onPress={handleCreateGroup} style={styles.createButton}>
+              <Text style={styles.createGroupText}>Create Group</Text>
+            </Pressable>
+            <CreateGroupModal
+              isVisible={isModalVisible}
+              onClose={handleCloseModal}
+              onGroupCreate={handleGroupCreation}
+            />
+          </View>
+
+          {/* Banner Section */}
+          <View style={styles.bannerSection}>
+            <Image
+              source={require("@/assets/OnlineVendorsEntryCard.png")}
+              resizeMode="contain"
+              style={styles.bannerImage}
+            />
+          </View>
+        </ScrollView>
+      </View>
+    </SafeScreen>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-    paddingTop: 30,
-    backgroundColor: "darkgray",
+    backgroundColor: "#707CE3",
   },
-  headerText: {
-    fontSize: 24,
+  headerContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 20,
+    marginTop: 10,
+    alignItems: "center",
+  },
+  headerButtonContainer: {
+    alignItems: "center",
+  },
+  headerButton: {
+    height: 40,
+    width: 40,
+  },
+  headerButtonInner: {
+    height: 40,
+    width: 40,
+    backgroundColor: "rgba(193, 193, 193, 0.21)",
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  headerButtonIcon: {
+    color: "#FFFFFF",
+    fontSize: 18,
     fontWeight: "bold",
-    textAlign: "center",
-    marginVertical: 20,
+  },
+  headerButtonText: {
+    fontFamily: "Metropolis-Bold",
+    color: "#E5E5E5",
+    fontSize: 12,
+    marginTop: 3,
+  },
+  rightHeaderButtons: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  scrollContainer: {
+    padding: 15,
   },
   topSection: {
     padding: 20,
@@ -109,9 +185,7 @@ const styles = StyleSheet.create({
   labelText: {
     marginTop: 5,
     fontSize: 12,
-  },
-  scrollContainer: {
-    padding: 15,
+    color: "#E5E5E5",
   },
   bannerSection: {
     marginBottom: 20,
@@ -124,30 +198,11 @@ const styles = StyleSheet.create({
   groupSection: {
     marginTop: 20,
   },
-  sectionHeader: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-  groupList: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  groupCard: {
-    width: "30%",
+  createButton: {
     alignItems: "center",
-  },
-  groupButton: {
-    width: "100%",
-    paddingVertical: 15,
-    backgroundColor: "#000",
-    borderRadius: 10,
-    alignItems: "center",
-  },
-  groupText: {
-    color: "white",
-    fontSize: 14,
   },
 });
+
+
 
 export default Home;
