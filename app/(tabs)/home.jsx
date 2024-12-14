@@ -69,7 +69,7 @@ const Home = () => {
             <ActivityButton />
           </View>
         </View>
-        <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12, marginLeft: 10 , top : 90 , position: "absolute"}}>Account</Text>
+        <Text style={{ fontFamily: "Metropolis-Bold", color: "#E5E5E5", fontSize: 12, marginLeft: 10 , top : 85 , position: "absolute"}}>Account</Text>
 
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
