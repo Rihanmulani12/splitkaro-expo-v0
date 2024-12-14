@@ -9,15 +9,16 @@ import {
   StatusBar,
 } from "react-native";
 import { useState } from "react";
+import Plus from "../../assets/svg/general/plus2.svg";
 
 import SafeScreen from "@/components/SafeScreen";
 import Wallet from "@/assets/svg/general/walletwhite.svg";
 import ActivityButton from "@/components/activity";
-import CreateGroupModal from "@/components/createGroup"
+import CreateGroupModal from "@/components/createGroup";
+import Profile from "@/components/profile";
+import Svg, { Polygon } from "react-native-svg";
 
 const Home = () => {
-
-  
   const [isModalVisible, setModalVisible] = useState(false);
 
   // Function to open the modal
@@ -32,7 +33,7 @@ const Home = () => {
 
   // Function to handle group creation
   const handleGroupCreation = (groupData) => {
-    console.log('New Group Created:', groupData);
+    console.log("New Group Created:", groupData);
     handleCloseModal();
   };
 
@@ -43,7 +44,6 @@ const Home = () => {
   const handleWalletPress = () => {
     console.log("Wallet button pressed");
   };
-  
 
   return (
     <SafeScreen color="#707CE3">
@@ -58,27 +58,13 @@ const Home = () => {
               onPress={handleAccountPress}
             >
               <View style={styles.headerButtonInner}>
-                <Text style={styles.headerButtonIcon}>A</Text>
+                <Profile />
               </View>
             </Pressable>
-            <Text style={styles.headerButtonText}>Account</Text>
           </View>
 
           {/* Wallet and Activity Buttons */}
-          <View style={styles.rightHeaderButtons}>
-            <View style={styles.headerButtonContainer}>
-              <Pressable
-                android_ripple={{ color: "#FFF6EE", radius: 20 }}
-                style={styles.headerButton}
-                onPress={handleWalletPress}
-              >
-                <View style={styles.headerButtonInner}>
-                 <Text>Wallet</Text>
-                </View>
-              </Pressable>
-              <Text style={styles.headerButtonText}>Wallet</Text>
-            </View>
-
+          <View style={styles.walletActivityContainer}>
             <ActivityButton />
           </View>
         </View>
@@ -87,12 +73,30 @@ const Home = () => {
           contentContainerStyle={styles.scrollContainer}
           showsVerticalScrollIndicator={false}
         >
-          
-
           <View style={styles.groupSection}>
             <Pressable onPress={handleCreateGroup} style={styles.createButton}>
-              <Text style={styles.createGroupText}>Create Group</Text>
+              <View style={styles.createGroupBtn}>
+              <Svg
+                
+                
+                viewBox="0 0 490 490"
+                style={{backgroundColor: "transparent"}}
+                
+              >
+                <Polygon
+                  style="fill:#ffffff;"
+                  points="495,227.5 267.5,227.5 267.5,0 227.5,0 227.5,227.5 0,227.5 0,267.5 227.5,267.5 227.5,495 
+	267.5,495 267.5,267.5 495,267.5 "
+                />
+              </Svg>
+
+              
+              </View>
+              <View style={{justifyContent: "center", alignItems: "center",width:80,top:5}}>
+              <Text ellipsizeMode={"tail"} numberOfLines={1} style={{ fontSize: 12, fontFamily: "Metropolis-SemiBold"}}>Create new</Text>
+              </View>
             </Pressable>
+            
             <CreateGroupModal
               isVisible={isModalVisible}
               onClose={handleCloseModal}
@@ -188,7 +192,7 @@ const styles = StyleSheet.create({
     color: "#E5E5E5",
   },
   bannerSection: {
-    marginBottom: 20,
+    marginTop: 150,
   },
   bannerImage: {
     width: "100%",
@@ -196,13 +200,30 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   groupSection: {
-    marginTop: 20,
+   
+    marginTop : 150,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+    
+    marginBottom: 20,
+    
+
   },
   createButton: {
     alignItems: "center",
+    justifyContent: "center",
+    
   },
+  createGroupBtn: {
+    height : 40 ,
+    width: 40,
+    borderRadius: 30,
+    backgroundColor: "white",
+
+   
+  },
+  
 });
-
-
 
 export default Home;
